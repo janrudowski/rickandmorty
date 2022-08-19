@@ -1,5 +1,5 @@
 import React from 'react';
-import { CharacterSchema, filterData } from '../types';
+import { CharacterSchema } from '../types';
 import Character from './Character';
 
 interface CharactersProps {

@@ -45,6 +45,7 @@ export default function CustomSelect({
 }) {
   useEffect(() => {
     onChange(selected);
+    // eslint-disable-next-line
   }, [selected]);
 
   const [isOpen, setIsOpen] = useState(false);

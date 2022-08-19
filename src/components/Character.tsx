@@ -11,7 +11,7 @@ export default function Character(props: CharacterSchema): JSX.Element {
         <img
           className='character-image'
           src={`${props.image}`}
-          alt='character picture'
+          alt='character'
         />
       </div>
 
