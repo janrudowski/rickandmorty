@@ -109,6 +109,7 @@ function App(): JSX.Element {
 
   useEffect((): void => {
     fetchData();
+    // eslint-disable-next-line
   }, [filterData, currentPage]);
 
   useEffect((): void => {
