@@ -1,0 +1,42 @@
+$accent-color: #98c439;
+$error-red: #ee4238;
+
+:root {
+  --background: #fff;
+  --background-second: #fafafa;
+  --color: #000;
+}
+
+.dark {
+  --background: #202124;
+  --background-second: #2a2b2f;
+  --color: #fff;
+}
+
+@mixin easeinout {
+  transition: all 300ms ease-in-out;
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media screen and (min-width: 240px) {
+    @content;
+  }
+}

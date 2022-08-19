@@ -1,0 +1,43 @@
+@use './config' as *;
+@use './responsive' as *;
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+  li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 0.3em;
+  }
+}
+
+.pagination-link {
+  padding: 1em;
+  color: var(--color);
+  &-active {
+    color: #fff;
+  }
+}
+
+.pagination-navigation-button {
+  background: darken($accent-color, 10%);
+  color: #fff;
+  border-radius: 15px;
+  &-link {
+    padding: 1em;
+  }
+}
+
+.pagination-break {
+  color: var(--color);
+}
+
+.pagination-page-active {
+  background: darken($accent-color, 10%);
+  color: #fff;
+  border-radius: 30px;
+}

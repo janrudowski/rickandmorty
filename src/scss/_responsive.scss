@@ -1,0 +1,29 @@
+@use './config' as *;
+
+@include media-sm {
+  .pagination-container {
+    li {
+      width: 25px;
+      height: 30px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@include media-md {
+  .pagination-container {
+    li {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@include media-lg {
+  .pagination-container {
+    li {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

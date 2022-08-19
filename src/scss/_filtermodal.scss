@@ -1,0 +1,85 @@
+@use './config' as *;
+
+.filtermodal {
+  &-container {
+    top: -100%;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: #000000, $alpha: 0.2);
+    backdrop-filter: blur(3px);
+    &.open {
+      top: 0;
+      .filtermodal-window {
+        top: 12%;
+      }
+    }
+  }
+  &-window {
+    @include easeinout;
+    position: absolute;
+    top: -100%;
+    width: 90%;
+    max-width: 600px;
+    height: 520px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 10px;
+    border-top: 5px solid $accent-color;
+    &-header {
+      border-bottom: 1px solid #000;
+      margin: 1em;
+    }
+  }
+
+  &-form {
+    width: 90%;
+    margin: 0 auto;
+    &-button {
+      border: none;
+      border: 1px solid $accent-color;
+      padding: 0.5em;
+      font-size: 1rem;
+      margin: 0.5em;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid $accent-color;
+      color: $accent-color;
+      cursor: pointer;
+      @include easeinout;
+      &:hover {
+        background: $accent-color;
+        color: #fff;
+      }
+      &.clear-button {
+        color: #000;
+        background: transparent;
+        border: 1px solid $error-red;
+      }
+    }
+    &-inputgroup {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      label {
+        margin-bottom: 0.5em;
+      }
+      input {
+        outline: none;
+        border: #4e5d7833 1px solid;
+        border-radius: 5px;
+        padding: 0.75em 1em;
+      }
+    }
+    &-buttons {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

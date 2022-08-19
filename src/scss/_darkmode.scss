@@ -1,0 +1,40 @@
+@use './config' as *;
+
+.darkmode-switch {
+  position: absolute;
+  z-index: 9999;
+  top: 1em;
+  right: 0.5em;
+  display: flex;
+  align-items: center;
+  &-switch {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    margin: 0 0.125em;
+    display: flex;
+    align-items: center;
+    .circle {
+      position: relative;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background: darken($accent-color, 20%);
+      margin: 0 0.125em;
+      border-radius: 15px;
+      @include easeinout;
+      &.dark {
+        left: 20px;
+      }
+    }
+  }
+  &-icon {
+    @include easeinout;
+    color: #fff;
+    &.active {
+      color: darken($accent-color, 20%);
+    }
+  }
+}
