@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { CharacterSchema } from '../types';
 
 import { formatDate } from '../utils/formatDate';
 
 export default function Character(props: CharacterSchema): JSX.Element {
+  const [loading, setLoading] = useState<boolean>(true);
   return (
     <div className='character'>
       <div className='character-image-container'>
         <img
+          src='/images/placeholder.jpeg'
+          alt='placeholder'
+          style={{ display: loading ? 'block' : 'none' }}
+        />
+        <img
           className='character-image'
           src={`${props.image}`}
           alt='character'
+          onLoad={() => setLoading(false)}
+          style={{ display: loading ? 'none' : 'block' }}
         />
       </div>
 
